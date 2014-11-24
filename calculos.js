@@ -1850,7 +1850,7 @@ var aguardar = function()
 {
 	LOG( 'AGUARDANDO DELAY...' );
 	// Adiciona um tempo randomico entre 10 e 60 segundos entre os ataques
-	var sleepTime = getRamdonInt(10,60) * 1000;
+	var sleepTime = getRandomInt(10,60) * 1000;
 	LOG('Delay de ataques ajustado em ' + sleepTime + 'ms');
 	sleep(sleepTime);
 }
