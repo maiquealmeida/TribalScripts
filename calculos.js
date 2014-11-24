@@ -922,9 +922,6 @@ var AUTO_FARM = function() {
 	 * data {Object} - Dados do comando que serÃ¡ enviado
 	 * vid {Number} - ID da aldeia que sofrerÃ¡ o ataque */
 	Autofarm.prototype.send = function( data ) {
-		// Adiciona um tempo randomico entre 10 e 60 segundos entre os ataques
-   	    var sleepTime = getRamdonInt(10,60) * 1000;
-		sleep(sleepTime);
 		
 		LOG( 'AUTO_FARM->SEND( ' + this.mid +  ' )' );
 		
@@ -995,6 +992,10 @@ var AUTO_FARM = function() {
 			
 			// requisiÃ§Ã£o 2/2 para o envio do comando
 			jQuery.post(form[ 0 ].action, form.serialize(), function() {
+				
+				// aguarda um tempo entre 10 e 60 segundos antes de prosseguir na execução do script.
+				aguardar();
+				
 				// salva o comando no historico
 				ADD_LOG( data, self.data.units, self.mid, lang.auto_farm.attack_sended );
 				
@@ -1842,6 +1843,13 @@ var sleep = function (milliseconds) {
 
 var getRandomInt = function (min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
+}
+
+var aguardar = function()
+{
+	// Adiciona um tempo randomico entre 10 e 60 segundos entre os ataques
+	var sleepTime = getRamdonInt(10,60) * 1000;
+	sleep(sleepTime);
 }
 
 })( false );
