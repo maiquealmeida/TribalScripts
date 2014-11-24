@@ -1849,6 +1849,7 @@ var aguardar = function()
 {
 	// Adiciona um tempo randomico entre 10 e 60 segundos entre os ataques
 	var sleepTime = getRamdonInt(10,60) * 1000;
+	console.log("Timer ajustado em "+sleepTime+"ms");
 	sleep(sleepTime);
 }
 
