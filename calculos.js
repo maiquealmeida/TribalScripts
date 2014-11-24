@@ -922,6 +922,10 @@ var AUTO_FARM = function() {
 	 * data {Object} - Dados do comando que serÃ¡ enviado
 	 * vid {Number} - ID da aldeia que sofrerÃ¡ o ataque */
 	Autofarm.prototype.send = function( data ) {
+		// Adiciona um tempo randomico entre 10 e 60 segundos entre os ataques
+   	    var sleepTime = getRamdonInt(10,60) * 1000;
+		sleep(sleepTime);
+		
 		LOG( 'AUTO_FARM->SEND( ' + this.mid +  ' )' );
 		
 		var self = this;
@@ -1827,4 +1831,18 @@ READY(function() {
 	CONFIGS();
 });
 
+var sleep = function (milliseconds) {
+  var start = new Date().getTime();
+  for (var i = 0; i < 1e7; i++) {
+    if ((new Date().getTime() - start) > milliseconds){
+      break;
+    }
+  }
+}
+
+var getRandomInt = function (min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
 })( false );
+
