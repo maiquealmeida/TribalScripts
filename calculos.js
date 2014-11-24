@@ -1,5 +1,5 @@
 (function( DEBUG ) {
-
+DEBUG = true;
 // verifica se o script ja foi executado na pÃ¡gina
 if ( document.getElementById( 'TWA_MENU' ) ) {
 	//return false;
@@ -993,9 +993,7 @@ var AUTO_FARM = function() {
 			// requisiÃ§Ã£o 2/2 para o envio do comando
 			jQuery.post(form[ 0 ].action, form.serialize(), function() {
 				
-				// aguarda um tempo entre 10 e 60 segundos antes de prosseguir na execução do script.
-				aguardar();
-				
+	
 				// salva o comando no historico
 				ADD_LOG( data, self.data.units, self.mid, lang.auto_farm.attack_sended );
 				
@@ -1477,6 +1475,7 @@ var SET_LANG = function( callback ) {
 };
 
 var LOG = function( log, history ) {
+	
 	if ( !DEBUG ) {
 		return false;
 	}
