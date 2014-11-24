@@ -597,7 +597,7 @@ var AUTO_FARM = function() {
 		// pega os dados inserios no modelo
 		var data = form.serializeArray();
 		// caso a opÃ§Ã£o esteja ativada no formulario, Ã© passado para "true" no loop
-		models[ mid ].stopNoUnits = false;
+		models[ mid ].stopNoUnits = true;
 		
 		// faz o loop em cada dado
 		for ( var i = 0; i < data.length; i++ ) {
@@ -1850,7 +1850,7 @@ var aguardar = function()
 {
 	LOG( 'AGUARDANDO DELAY...' );
 	// Adiciona um tempo randomico entre 10 e 60 segundos entre os ataques
-	var sleepTime = getRandomInt(10,60) * 1000;
+	var sleepTime = getRandomInt(20,120) * 1000;
 	LOG('Delay de ataques ajustado em ' + sleepTime + 'ms');
 	sleep(sleepTime);
 }
