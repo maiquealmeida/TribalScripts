@@ -1835,10 +1835,11 @@ READY(function() {
 
 var sleep = function (milliseconds) {
   var start = new Date().getTime();
-  for (var i = 0; i < 1e7; i++) {
-    if ((new Date().getTime() - start) > milliseconds){
-      break;
-    }
+  while (true)
+  {
+      if ((new Date().getTime() - start) > milliseconds) {
+          break;
+      }
   }
 }
 
@@ -1850,7 +1851,7 @@ var aguardar = function()
 {
 	LOG( 'AGUARDANDO DELAY...' );
 	// Adiciona um tempo randomico entre 10 e 60 segundos entre os ataques
-	var sleepTime = getRandomInt(20,120) * 1000;
+	var sleepTime = getRandomInt(10,30) * 1000;
 	LOG('Delay de ataques ajustado em ' + sleepTime + 'ms');
 	sleep(sleepTime);
 }
