@@ -849,6 +849,7 @@ var AUTO_FARM = function() {
 	
 	/** Autofarm.next - Prepara o priximo ataque da lista. */
 	Autofarm.prototype.next = function() {
+		aguardar();
 		LOG( 'AUTO_FARM->NEXT( ' + this.mid +  ' )' );
 		
 		// verifica se nÃ£o chegou na Ãºltima coordenada da fila
