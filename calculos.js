@@ -849,8 +849,9 @@ var AUTO_FARM = function() {
 	
 	/** Autofarm.next - Prepara o priximo ataque da lista. */
 	Autofarm.prototype.next = function() {
-		aguardar();
+		
 		LOG( 'AUTO_FARM->NEXT( ' + this.mid +  ' )' );
+		aguardar();
 		
 		// verifica se nÃ£o chegou na Ãºltima coordenada da fila
 		if ( ++this.data.index >= this.data.coords.length ) {
@@ -1847,9 +1848,10 @@ var getRandomInt = function (min, max) {
 
 var aguardar = function()
 {
+	LOG( 'AGUARDANDO DELAY...' );
 	// Adiciona um tempo randomico entre 10 e 60 segundos entre os ataques
 	var sleepTime = getRamdonInt(10,60) * 1000;
-	console.log("Timer ajustado em "+sleepTime+"ms");
+	log('Delay de ataques ajustado em ' + sleepTime + 'ms');
 	sleep(sleepTime);
 }
 
