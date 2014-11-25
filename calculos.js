@@ -882,6 +882,9 @@ var AUTO_FARM = function() {
 			return this;
 		}
 		
+		LOG( 'Aguardando e preparando para AUTO_FARM->PREPARE(%i)', coords.join('|') );
+		aguardar(20,60);
+		
 		LOG( 'AUTO_FARM->PREPARE(%i)', coords.join('|') );
 		
 		var self = this;
@@ -1845,7 +1848,7 @@ var getRandomInt = function (min, max) {
 var aguardar = function(min, max)
 {
 	LOG( 'AGUARDANDO DELAY...' );
-	// Adiciona um tempo randomico entre 10 e 60 segundos entre os ataques
+	// Adiciona um tempo randomico entre os numeros informados nos parametros
 	var sleepTime = getRandomInt(min, max) * 1000;
 	LOG('Delay de ataques ajustado em ' + sleepTime + 'ms');
 	sleep(sleepTime);
