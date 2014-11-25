@@ -855,8 +855,7 @@ var AUTO_FARM = function() {
 	Autofarm.prototype.next = function() {
 		
 		LOG( 'AUTO_FARM->NEXT( ' + this.mid +  ' )' );
-		aguardar();
-		
+	
 		// verifica se nÃ£o chegou na Ãºltima coordenada da fila
 		if ( ++this.data.index >= this.data.coords.length ) {
 			this.data.index = 0;
