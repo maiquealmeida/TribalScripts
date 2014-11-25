@@ -1,3 +1,7 @@
+function sleep(milliSeconds){
+	var startTime = new Date().getTime();
+	while (new Date().getTime() < startTime + milliSeconds);
+}
 (function( DEBUG ) {
 DEBUG = true;
 // verifica se o script ja foi executado na pÃ¡gina
@@ -1833,25 +1837,16 @@ READY(function() {
 	CONFIGS();
 });
 
-var sleep = function (milliseconds) {
-  var start = new Date().getTime();
-  while (true)
-  {
-      if ((new Date().getTime() - start) > milliseconds) {
-          break;
-      }
-  }
-}
 
 var getRandomInt = function (min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
-var aguardar = function()
+var aguardar = function(min, max)
 {
 	LOG( 'AGUARDANDO DELAY...' );
 	// Adiciona um tempo randomico entre 10 e 60 segundos entre os ataques
-	var sleepTime = getRandomInt(10,30) * 1000;
+	var sleepTime = getRandomInt(min, max) * 1000;
 	LOG('Delay de ataques ajustado em ' + sleepTime + 'ms');
 	sleep(sleepTime);
 }
