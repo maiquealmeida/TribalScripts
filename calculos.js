@@ -157,7 +157,7 @@ var COMMAND_PLANNER = function() {
 	});
 	
 	// carrega o plugin jquery.DateTimePicker
-	jQuery.getScript('http://relaxeaza.aws.af.cm/TWA/jquery.datetimepicker.js', function() {
+	jQuery.getScript('http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.js', function() {
 		app.find( '[name=CMDPLANNER_TIME]' ).datetimepicker({
 			value: TIMESTAMP_FORMAT( CURRENT_TIME() ),
 			format: 'H:i:s d/m/Y',
